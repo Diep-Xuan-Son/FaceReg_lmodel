@@ -1,4 +1,3 @@
-######################### being fail #########
 import torch
 import asyncio
 import uvicorn
@@ -28,16 +27,31 @@ FILE_HANDLER.setFormatter(logging.Formatter(
 ))
 LOGGER.addHandler(FILE_HANDLER)
 
-# Configuration
-class Settings(BaseModel):
-    max_workers: int = Field(default=4, description="Initial number of worker processes")
-    max_workers_limit: int = Field(default=16, description="Maximum number of worker processes")
-    auto_scale_threshold: float = Field(default=0.7, description="Worker utilization threshold to trigger scaling")
-    scale_cooldown: int = Field(default=30, description="Cooldown period in seconds between scaling events")
-    batch_size: int = Field(default=16, description="Batch size for inference")
-    gpu_device: int = Field(default=0, description="GPU device index")
-    confidence_threshold: float = Field(default=0.5, description="Confidence threshold for detection")
-settings = Settings()
+# Configuration settings
+class Config:
+    # GPU settings
+    CUDA_AVAILABLE = torch.cuda.is_available()
+    NUM_GPUS = torch.cuda.device_count() if CUDA_AVAILABLE else 0
+    
+    # Worker pool settings
+    MIN_WORKERS = 1
+    MAX_WORKERS = 5  # Maximum number of workers to scale to
+    INITIAL_WORKERS = 2
+    
+    # Auto-scaling settings
+    SCALING_THRESHOLD_HIGH = 0.8  # Scale up when queue is 80% full
+    SCALING_THRESHOLD_LOW = 0.2   # Scale down when queue is 20% full
+    SCALING_CHECK_INTERVAL = 10   # Check for scaling every 10 seconds
+    SCALE_COOLDOWN = 30
+    
+    # Performance settings
+    REQUEST_TIMEOUT = 30  # Seconds
+    QUEUE_MAX_SIZE = 5000
+    
+    # Person detection settings
+    CONFIDENCE_THRESHOLD = 0.5
+
+    BATCH_SIZE = 8
 
 
 class MultiWoker():
@@ -49,12 +63,66 @@ class MultiWoker():
 		# Worker pool
 		self.worker_pool = None
 		self.last_scale_time = 0
-		self.current_workers = settings.max_workers
+		self.current_workers = Config.MAX_WORKERS
+
+		self.worker_lock = threading.Lock()
+		self.current_worker_count = Config.INITIAL_WORKERS
+		self.workers = []
 
 	@classmethod
 	# Create process pool for workers
 	def create_worker_pool(num_workers):
 	    return ThreadPoolExecutor(max_workers=num_workers)
+
+	def add_worker(self, new_workers, current_time):
+        with self.worker_lock:
+            if self.current_worker_count >= Config.MAX_WORKERS:
+                logger.info("Max workers reached, not adding more")
+                return False
+                
+            # Determine which GPU to use (round-robin)
+            device_id = None
+            if Config.CUDA_AVAILABLE and Config.NUM_GPUS > 0:
+                device_id = self.current_worker_count % Config.NUM_GPUS
+            
+            try:
+                # Create new detector
+                detector = PersonDetector(device_id)
+                
+                # Add to worker list
+                self.workers.append(detector)
+                self.current_worker_count += 1
+
+                # Create new worker pool
+                self.worker_pool = self.create_worker_pool(new_workers)
+                self.current_workers = new_workers
+                self.last_scale_time = current_time
+                
+                logger.info(f"Added worker #{self.current_worker_count} on device {device_id if device_id is not None else 'CPU'}")
+                return True
+            except Exception as e:
+            	tb_str = traceback.format_exc()
+                logger.error(f"Failed to add worker: {tb_str}")
+                return False
+
+    def remove_worker(self, new_workers, current_time):
+        with worker_lock:
+            if self.current_worker_count <= Config.MIN_WORKERS:
+                logger.info("Min workers reached, not removing more")
+                return False
+            
+            # Remove a worker (just decrement the count, the actual worker will be garbage collected)
+            if self.workers:
+                self.workers.pop()
+                self.current_worker_count -= 1
+
+                # Create new worker pool
+                self.worker_pool = self.create_worker_pool(new_workers)
+                self.current_workers = new_workers
+                self.last_scale_time = current_time
+                logger.info(f"Removed worker, now at {self.current_worker_count}")
+                return True
+            return False
 
 	# Worker utilization metric
 	def get_worker_utilization(self,):
@@ -74,35 +142,31 @@ class MultiWoker():
 	            logger.info(f"Worker utilization: {utilization:.2f}, Queue size: {queue_size}")
 	            
 	            # Scale up if high utilization and not recently scaled
-	            if (utilization > settings.auto_scale_threshold or queue_size > self.current_workers * 3) and \
-	               self.current_workers < settings.max_workers_limit and \
-	               (current_time - self.last_scale_time) > settings.scale_cooldown:
+	            if (utilization > Config.SCALING_THRESHOLD_HIGH or queue_size > self.current_workers * 3) and \
+	               self.current_workers < Config.MAX_WORKERS and \
+	               (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
 	                
-	                new_workers = min(self.current_workers * 2, settings.max_workers_limit)
+	                new_workers = min(self.current_workers * 2, Config.MAX_WORKERS)
 	                logger.info(f"Scaling up workers from {self.current_workers} to {new_workers}")
 	                
 	                # Replace the worker pool
 	                old_pool = self.worker_pool
-	                self.worker_pool = self.create_worker_pool(new_workers)
-	                self.current_workers = new_workers
-	                self.last_scale_time = current_time
+	                self.add_worker(new_workers, current_time)
 	                
 	                # Shutdown old pool gracefully
 	                if old_pool:
 	                    old_pool.shutdown(wait=False)
 	            
 	            # Scale down if low utilization and not recently scaled
-	            elif utilization < 0.3 and queue_size < self.current_workers and self.current_workers > settings.max_workers and \
-	                 (current_time - self.last_scale_time) > settings.scale_cooldown:
+	            elif utilization < Config.SCALING_THRESHOLD_LOW and queue_size < self.current_workers and self.current_workers > Config.MAX_WORKERS and \
+	                 (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
 	                
-	                new_workers = max(self.current_workers // 2, settings.max_workers)
+	                new_workers = max(self.current_workers // 2, Config.MAX_WORKERS)
 	                logger.info(f"Scaling down workers from {self.current_workers} to {new_workers}")
 	                
 	                # Replace the worker pool
 	                old_pool = self.worker_pool
-	                self.worker_pool = self.create_worker_pool(new_workers)
-	                self.current_workers = new_workers
-	                self.last_scale_time = current_time
+	                self.remove_worker(new_workers, current_time)
 	                
 	                # Shutdown old pool gracefully
 	                if old_pool:
@@ -111,7 +175,7 @@ class MultiWoker():
 	        except Exception as e:
 	            logger.error(f"Error in auto-scaling: {str(e)}")
 	        
-	        await asyncio.sleep(5)  # Check every 5 seconds
+	        await asyncio.sleep(Config.SCALING_CHECK_INTERVAL)  # Check every 5 seconds
 
 	# Process image batch
 	def process_batch(model, image_batch, task_ids):
@@ -122,7 +186,7 @@ class MultiWoker():
 	        
 	        # Run inference
 	        with torch.no_grad():
-	            tensor_batch = tensor_batch.to(f'cuda:{settings.gpu_device}' if torch.cuda.is_available() else 'cpu')
+	            tensor_batch = tensor_batch.to(f'cuda:{Config.NUM_GPUS}' if torch.cuda.is_available() else 'cpu')
 	            predictions = model(tensor_batch)
 	        
 	        # Process results
@@ -132,7 +196,7 @@ class MultiWoker():
 	        for i, task_id in enumerate(task_ids):
 	            # Filter for person class (class 0 in COCO dataset)
 	            person_detections = results[i][results[i]['class'] == 0]
-	            person_detections = person_detections[person_detections['confidence'] >= settings.confidence_threshold]
+	            person_detections = person_detections[person_detections['confidence'] >= Config.CONFIDENCE_THRESHOLD]
 	            
 	            results_store[task_id] = {
 	                'status': 'completed',
@@ -152,6 +216,9 @@ class MultiWoker():
 	            }
 	        tb_str = traceback.format_exc()
 	        logger.error(f"Batch processing error: {tb_str}")
+
+	# Process image batch
+	def process_batch(self, model, image_batch, task_ids):
 
 	# Task processor
 	async def process_tasks():
@@ -177,7 +244,7 @@ class MultiWoker():
 	            
 	            # Try to get more tasks to fill the batch
 	            try:
-	                for _ in range(settings.batch_size - 1):
+	                for _ in range(Config.BATCH_SIZE - 1):
 	                    if self.request_queue.qsize() > 0:
 	                        task = self.request_queue.get_nowait()
 	                        batch_tasks.append(task)
