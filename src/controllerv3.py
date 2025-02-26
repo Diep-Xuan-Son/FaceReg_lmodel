@@ -86,11 +86,13 @@ class MultiWoker():
                 device_id = self.current_worker_count % Config.NUM_GPUS
             
             try:
-                # Create new detector
-                detector = PersonDetector(device_id)
+                # Create new models
+                facedet = RetinanetRunnable(**CONFIG_FACEDET)
+				ghostface = GhostFaceRunnable(**CONFIG_GHOSTFACE)
+				spoofingdet = FakeFace(f"{str(ROOT)}/weights/spoofing.onnx")
                 
                 # Add to worker list
-                self.workers.append(detector)
+                self.workers.append([facedet, ghostface, spoofingdet])
                 self.current_worker_count += 1
 
                 # Create new worker pool
@@ -106,7 +108,7 @@ class MultiWoker():
                 return False
 
     def remove_worker(self, new_workers, current_time):
-        with worker_lock:
+        with self.worker_lock:
             if self.current_worker_count <= Config.MIN_WORKERS:
                 logger.info("Min workers reached, not removing more")
                 return False
@@ -123,6 +125,17 @@ class MultiWoker():
                 logger.info(f"Removed worker, now at {self.current_worker_count}")
                 return True
             return False
+
+    def get_worker(self):
+        # Simple round-robin worker selection
+        with self.worker_lock:
+            if not self.workers:
+                return None
+            
+            # Move the first worker to the end and return it
+            worker = self.workers[0]
+            self.workers = self.workers[1:] + [worker]
+            return worker
 
 	# Worker utilization metric
 	def get_worker_utilization(self,):
@@ -218,16 +231,22 @@ class MultiWoker():
 	        logger.error(f"Batch processing error: {tb_str}")
 
 	# Process image batch
-	def process_batch(self, model, image_batch, task_ids):
+	def searchUser_batch(self, models, image_batch, task_ids):
+
 
 	# Task processor
 	async def process_tasks():
 	    # Load model
 	    # model = load_model()
 	    # logger.info(f"Model loaded on {'GPU' if torch.cuda.is_available() else 'CPU'}")
-	    facedet = RetinanetRunnable(**CONFIG_FACEDET)
-		ghostface = GhostFaceRunnable(**CONFIG_GHOSTFACE)
-		spoofingdet = FakeFace(f"{str(ROOT)}/weights/spoofing.onnx")
+	    # facedet = RetinanetRunnable(**CONFIG_FACEDET)
+		# ghostface = GhostFaceRunnable(**CONFIG_GHOSTFACE)
+		# spoofingdet = FakeFace(f"{str(ROOT)}/weights/spoofing.onnx")
+
+		# Get a worker
+        worker = self.get_worker()
+        if not worker:
+            raise Exception("No workers available")
 	    
 	    # Process batches from the queue
 	    while True:
@@ -259,7 +278,7 @@ class MultiWoker():
 	            
 	            # Process batch in thread pool
 	            if self.worker_pool is not None:
-	                self.worker_pool.submit(process_batch, model, batch_images, batch_task_ids)
+	                self.worker_pool.submit(search_user_batch, worker, batch_images, batch_task_ids)
 	            
 	            # Mark tasks as done in the queue
 	            for _ in batch_tasks:
@@ -297,6 +316,7 @@ async def searchUser(image: UploadFile = File(...)):
         image_data = await file.read()
         nparr = np.frombuffer(image_data, np.uint8)
     	img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    	
         # Create task and add to queue
         MULTIW.results_store[task_id] = {'status': 'pending'}
         await MULTIW.request_queue.put({'task_id': task_id, 'image': img, 'submitted_at': time.time()})

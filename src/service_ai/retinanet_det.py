@@ -256,6 +256,54 @@ class RetinanetRunnable():
 				miss_det.append(i)
 		return np.array(results), np.array(miss_det), np.array(croped_images)
 
+	def preProcess_batch(self, ims):
+		ims = ims.astype(np.float32)
+		# HWC to CHW format:
+		ims -= (104, 117, 123)
+		ims = ims.transpose(0, 3, 1, 2)
+		# CHW to NCHW format
+		ims = np.ascontiguousarray(ims)
+		return ims
+
+	def postProcess_batch(self, sizes, locs, confs, landms):
+		# img, scale, im_height, im_width = input
+		# loc, conf, landms = output
+		scale_boxes = np.tile(sizes, (2))
+		# st_time = time.time()
+		prior_data = self.priors.copy()
+		prior_data = torch.from_numpy(prior_data)
+		# print("----Duration PriorBox: ", time.time()-st_time)
+		# stt_time = time.time()
+		# st_time = time.time()
+		boxes = self.decode_cpu(loc.squeeze(0), prior_data.cpu().numpy(), self.variance)
+		# print("----Duration decode_cpu: ", time.time()-st_time)
+		boxes = boxes * scale
+		# boxes = boxes.cpu().numpy()
+		scores = conf.squeeze(0)[:, 1]
+		# st_time = time.time()
+		landms = self.decode_landm_cpu(landms.squeeze(0), prior_data.cpu().numpy(), self.variance)
+		# print("----Duration decode_landm: ", time.time()-st_time)
+		scale_landms = np.array([im_width, im_height, im_width, im_height, im_width,
+							   im_height, im_width, im_height, im_width, im_height])
+		# scale_landms = scale_landms.cpu().numpy()
+		landms = landms * scale_landms
+		# print("----Duration test: ", time.time()-stt_time)
+
+
+	def inference_batch(self, ims):
+		inputs = []
+		sizes = []
+		for i, im in enumerate(ims):
+			(h, w) = im.shape[:2]
+			img = cv2.resize(img, (640,640), interpolation=cv2.INTER_AREA)
+			inputs.append(img)
+			sizes.append([w,h])
+
+		inputs = self.preProcess_batch(inputs)
+		ort_inputs = {self.sess.get_inputs()[0].name: inputs}
+		locs, confs, landms = self.sess.run(None, ort_inputs)
+		dets = self.postProcess(sizes, locs, confs, landms)
+
 	def render(self, ims):
 		im_preds = []
 		for i, im in enumerate(ims):
