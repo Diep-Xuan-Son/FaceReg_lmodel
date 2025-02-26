@@ -1,0 +1,26 @@
+2025-02-20 10:52:30.054 | INFO     | app:<module>:48 - ----REDISSERVER_IP: 192.168.6.163
+2025-02-20 10:52:30.054 | INFO     | app:<module>:49 - ----REDISSERVER_PORT: 6400
+2025-02-20 10:52:42.941 | INFO     | __mp_main__:getInformationUserv2:486 - ----codes: []
+2025-02-20 10:53:09.174 | INFO     | __mp_main__:registerFacev2:376 - ----code: 001099008839444
+2025-02-20 10:53:09.349 | INFO     | __mp_main__:registerFacev2:417 - ----num id_face: 6
+2025-02-20 10:53:19.122 | INFO     | __mp_main__:searchUserv2:541 - ---------result_spoofing: [0.9999129167503044, 8.708324969564389e-05]
+2025-02-20 10:53:19.122 | INFO     | __mp_main__:searchUserv2:548 - ------Duration det: 0.014849424362182617
+2025-02-20 10:53:19.129 | INFO     | __mp_main__:searchUserv2:555 - ------Duration reg: 0.007377147674560547
+2025-02-20 10:53:19.130 | INFO     | __mp_main__:searchUserv2:560 - ------Duration db: 0.00031304359436035156
+2025-02-20 10:53:19.132 | INFO     | __mp_main__:searchUserv2:579 - ---------similarity_best: 0.9990234375
+2025-02-20 10:53:19.133 | INFO     | __mp_main__:searchUserv2:586 - ------Duration compare: 0.0029015541076660156
+2025-02-20 10:53:19.133 | INFO     | __mp_main__:searchUserv2:589 - ----infor_face; b'001099008839444@@@thinh@@@29/04/1999@@@static/avatar/001099008839444/face_0.jpg'
+2025-02-20 10:53:24.814 | INFO     | __mp_main__:searchUserv2:541 - ---------result_spoofing: [0.9999311659292154, 6.883407078464115e-05]
+2025-02-20 10:53:24.814 | INFO     | __mp_main__:searchUserv2:548 - ------Duration det: 0.029971837997436523
+2025-02-20 10:53:24.821 | INFO     | __mp_main__:searchUserv2:555 - ------Duration reg: 0.006882905960083008
+2025-02-20 10:53:24.822 | INFO     | __mp_main__:searchUserv2:560 - ------Duration db: 0.0001690387725830078
+2025-02-20 10:53:24.823 | INFO     | __mp_main__:searchUserv2:579 - ---------similarity_best: 0.99853515625
+2025-02-20 10:53:24.823 | INFO     | __mp_main__:searchUserv2:586 - ------Duration compare: 0.0016713142395019531
+2025-02-20 10:53:24.823 | INFO     | __mp_main__:searchUserv2:589 - ----infor_face; b'001099008839444@@@thinh@@@29/04/1999@@@static/avatar/001099008839444/face_0.jpg'
+2025-02-20 10:53:30.069 | INFO     | __mp_main__:searchUserv2:541 - ---------result_spoofing: [0.9998439929854522, 0.00015600701454774089]
+2025-02-20 10:53:30.069 | INFO     | __mp_main__:searchUserv2:548 - ------Duration det: 0.037183284759521484
+2025-02-20 10:53:30.076 | INFO     | __mp_main__:searchUserv2:555 - ------Duration reg: 0.006636142730712891
+2025-02-20 10:53:30.077 | INFO     | __mp_main__:searchUserv2:560 - ------Duration db: 0.00038242340087890625
+2025-02-20 10:53:30.077 | INFO     | __mp_main__:searchUserv2:579 - ---------similarity_best: 0.998046875
+2025-02-20 10:53:30.078 | INFO     | __mp_main__:searchUserv2:586 - ------Duration compare: 0.00083160400390625
+2025-02-20 10:53:30.078 | INFO     | __mp_main__:searchUserv2:589 - ----infor_face; b'001099008839444@@@thinh@@@29/04/1999@@@static/avatar/001099008839444/face_0.jpg'

@@ -1,0 +1,17 @@
+#torchvision
+opencv-python-headless
+scikit-learn
+scikit-image
+numpy
+tritonclient[all]
+
+linformer
+vit_pytorch
+pyyaml
+pillow
+loguru
+
+redis
+onnx
+onnxruntime==1.19.0
+# onnxruntime-gpu==1.19.0 #match with cuda 12x and cudnn 9.x, verison 1.18.0 math with cuda 11x and cudnn 8.x

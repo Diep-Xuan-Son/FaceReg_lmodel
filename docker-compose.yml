@@ -1,0 +1,59 @@
+version: '3'
+networks:
+  mynetwork_bridge:
+    driver: bridge
+services:
+  redis1:
+    image: redis
+    container_name: face-redis1
+    restart: always
+    ports: 
+      - "6400:6400"
+    volumes:
+      - ./data:/data
+      - ./config/redis1.conf:/usr/local/etc/redis/redis.conf
+    networks:
+      mynetwork_bridge:
+    profiles:
+      - redis
+    command: redis-server /usr/local/etc/redis/redis.conf
+  # redis2:
+  #   image: redis
+  #   container_name: face-redis2
+  #   ports: 
+  #     - "6401:6401"
+  #   volumes:
+  #     - ./data:/data
+  #     - ./config/redis2.conf:/usr/local/etc/redis/redis.conf
+  #   profiles:
+  #     - dev2
+  #   command: redis-server /usr/local/etc/redis/redis.conf
+
+  controller_server:
+    image: dixuson/facereg_lmodel
+    container_name: facereg
+    restart: always
+    environment:
+      - REDISSERVER_IP=redis1
+      - REDISSERVER_PORT=6400
+    build:
+      dockerfile: Dockerfile_controller
+    ports: 
+      - "8421:8421"
+    depends_on:
+      - redis1
+    volumes:
+      - ./static:/controller_server/static
+      - ./src:/workspace/
+      - ./logs:/controller_server/logs
+    networks:
+      mynetwork_bridge:
+    profiles:
+      - controller_ai
+    # command: python3.11 controller.py
+    command: uvicorn --workers 1 --host 0.0.0.0 --port 8421 controller:app
+
+
+# docker compose -f docker-compose.yml --profile dev1 up -d
+# docker compose -f docker-compose.yml --profile "*" up -d
+# docker compose -f docker-compose.yml --profile triton_server up -d

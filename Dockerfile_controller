@@ -1,0 +1,28 @@
+FROM mosaicml/pytorch:2.4.1_cpu-python3.11-ubuntu20.04
+
+RUN apt-get update 
+RUN apt-get install -y \
+        ffmpeg \
+        nano \
+        curl
+
+RUN pip install --upgrade pip
+
+WORKDIR /controller_server
+COPY requirements.txt /controller_server/requirements.txt
+COPY requirements_serving.txt /controller_server/requirements_serving.txt
+
+RUN python3.11 -m pip uninstall -y numpy
+RUN python3.11 -m pip --no-cache-dir install -r /controller_server/requirements.txt
+RUN python3.11 -m pip --no-cache-dir install -r /controller_server/requirements_serving.txt
+
+COPY ./src /controller_server
+
+ENV REDISSERVER_IP=redis1
+ENV REDISSERVER_PORT=6400
+
+# CMD ["python3.11", "controller.py"]
+
+# docker build -t dixuson/facereg_lmodel -f Dockerfile_controller .
+# docker run -d -p 8421:8421 --name controller_ai dixuson/facereg_lmodel
+# docker run -d -p 8421:8421 -v %cd%/src/weights:/controller_server/weights --name controller_ai dixuson/facereg_lmodel

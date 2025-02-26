@@ -1,0 +1,16 @@
+2025-02-25 17:44:28.081 | INFO     | app:<module>:49 - ----REDISSERVER_IP: 192.168.6.163
+2025-02-25 17:44:28.081 | INFO     | app:<module>:50 - ----REDISSERVER_PORT: 6400
+2025-02-25 17:44:34.772 | INFO     | __mp_main__:searchUserv2:541 - ---------result_spoofing: [0.9999311659292154, 6.883407078464115e-05]
+2025-02-25 17:44:34.772 | INFO     | __mp_main__:searchUserv2:548 - ------Duration det: 0.0177762508392334
+2025-02-25 17:44:34.784 | INFO     | __mp_main__:searchUserv2:555 - ------Duration reg: 0.012473344802856445
+2025-02-25 17:44:34.785 | INFO     | __mp_main__:searchUserv2:560 - ------Duration db: 0.0004115104675292969
+2025-02-25 17:44:34.786 | INFO     | __mp_main__:searchUserv2:579 - ---------similarity_best: 0.99853515625
+2025-02-25 17:44:34.793 | INFO     | __mp_main__:searchUserv2:593 - ------Duration compare: 0.0072019100189208984
+2025-02-25 17:44:34.793 | INFO     | __mp_main__:searchUserv2:596 - ----infor_face; b'001099008839444@@@thinh@@@29/04/1999@@@static/avatar/001099008839444/face_0.jpg'
+2025-02-25 17:44:44.214 | INFO     | __mp_main__:searchUserv2:541 - ---------result_spoofing: [0.9999311659292154, 6.883407078464115e-05]
+2025-02-25 17:44:44.214 | INFO     | __mp_main__:searchUserv2:548 - ------Duration det: 0.02519369125366211
+2025-02-25 17:44:44.244 | INFO     | __mp_main__:searchUserv2:555 - ------Duration reg: 0.02953362464904785
+2025-02-25 17:44:44.244 | INFO     | __mp_main__:searchUserv2:560 - ------Duration db: 0.0002739429473876953
+2025-02-25 17:44:44.245 | INFO     | __mp_main__:searchUserv2:579 - ---------similarity_best: 0.99853515625
+2025-02-25 17:44:44.246 | INFO     | __mp_main__:searchUserv2:593 - ------Duration compare: 0.0008893013000488281
+2025-02-25 17:44:44.246 | INFO     | __mp_main__:searchUserv2:596 - ----infor_face; b'001099008839444@@@thinh@@@29/04/1999@@@static/avatar/001099008839444/face_0.jpg'
