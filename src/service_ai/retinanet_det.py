@@ -257,6 +257,7 @@ class RetinanetRunnable():
 		return np.array(results), np.array(miss_det), np.array(croped_images)
 
 	def preProcess_batch(self, ims):
+		ims = np.array(ims)
 		ims = ims.astype(np.float32)
 		# HWC to CHW format:
 		ims -= (104, 117, 123)
@@ -265,44 +266,112 @@ class RetinanetRunnable():
 		ims = np.ascontiguousarray(ims)
 		return ims
 
-	def postProcess_batch(self, sizes, locs, confs, landms):
+	def postProcess_batch(self, ims, sizes, locs, confs, landms):
 		# img, scale, im_height, im_width = input
 		# loc, conf, landms = output
-		scale_boxes = np.tile(sizes, (2))
+		# scale_boxes = np.tile(sizes, (2))
 		# st_time = time.time()
 		prior_data = self.priors.copy()
-		prior_data = torch.from_numpy(prior_data)
+		prior_datas = np.tile(prior_data, (len(sizes), 1, 1))
+		# prior_data = torch.from_numpy(prior_data)
 		# print("----Duration PriorBox: ", time.time()-st_time)
 		# stt_time = time.time()
 		# st_time = time.time()
-		boxes = self.decode_cpu(loc.squeeze(0), prior_data.cpu().numpy(), self.variance)
+		boxes = self.decode_cpu_batch(locs, prior_datas, self.variance)
 		# print("----Duration decode_cpu: ", time.time()-st_time)
-		boxes = boxes * scale
+		scale_boxes = np.tile(sizes, (1,boxes.shape[1],2))
+		boxes = boxes * scale_boxes
 		# boxes = boxes.cpu().numpy()
-		scores = conf.squeeze(0)[:, 1]
+		scores = confs[:, :, 1]
 		# st_time = time.time()
-		landms = self.decode_landm_cpu(landms.squeeze(0), prior_data.cpu().numpy(), self.variance)
+		landms = self.decode_landm_cpu_batch(landms, prior_datas, self.variance)
 		# print("----Duration decode_landm: ", time.time()-st_time)
-		scale_landms = np.array([im_width, im_height, im_width, im_height, im_width,
-							   im_height, im_width, im_height, im_width, im_height])
-		# scale_landms = scale_landms.cpu().numpy()
+		scale_landms = np.tile(sizes, (1,landms.shape[1],5))
 		landms = landms * scale_landms
 		# print("----Duration test: ", time.time()-stt_time)
 
+		results = []
+		miss_det = []
+		croped_images = []
+		for im, sz, b, s, l in zip(ims, sizes, boxes, scores, landms):
+			sz = sz[0]
+			inds = np.where(s > self.conf_thres)[0]
+			b = b[inds]
+			l = l[inds]
+			s = s[inds]
+			order = s.argsort()[::-1][:5000]
+			b = b[order]
+			l = l[order]
+			s = s[order]
+			dets = np.hstack((b, s[:, np.newaxis])).astype(np.float32, copy=False)
+			# st_time = time.time()
+			keep = self.py_cpu_nms(dets, self.iou_thres)
+			# print("----Duration nms: ", time.time()-st_time)
+			dets = dets[keep, :]
+			l = l[keep]
+
+			dets = dets[:750, :]
+			l = l[:750, :]
+			dets = np.concatenate((dets, l), axis=1)
+
+			# find the biggest face
+			if len(dets) != 0:
+				dets_max = max(dets.tolist(), key=lambda x: (x[2]-x[0])*(x[3]-x[1]))
+				dets_max = np.array(dets_max)
+				dets_max[:4:2] = np.clip(dets_max[:4:2], a_min=0, a_max=sz[0])
+				dets_max[1:4:2] = np.clip(dets_max[1:4:2], a_min=0, a_max=sz[1])
+				dets_max[5::2] = np.clip(dets_max[5::2], a_min=0, a_max=sz[0])
+				dets_max[6::2] = np.clip(dets_max[6::2], a_min=0, a_max=sz[1])
+				bbox = np.array(dets_max[:4])
+				area = (bbox[2]-bbox[0])*(bbox[3]-bbox[1])
+				# print(f"----area: {area}")
+				# print(f"----frame_area: {sz[1]*sz[0]*0.02}")
+				if area < sz[1]*sz[0]*0.02:
+					miss_det.append(i)
+					# croped_images.append(None)
+					continue
+				result = dict(loc=dets_max[:4], conf=dets_max[4], landms=dets_max[5:])
+				results.append(result)
+				landmarks = np.array(dets_max[5:])
+				landmarks = np.array([landmarks[0], landmarks[2], landmarks[4], landmarks[6], landmarks[8],
+							landmarks[1], landmarks[3], landmarks[5], landmarks[7], landmarks[9]])
+				landmarks = landmarks.reshape((2,5)).T
+				nimg = face_preprocess(im, bbox, landmarks, image_size=self.imgsz_align)
+				croped_images.append(nimg)
+			else:
+				miss_det.append(i)
+		return (np.array(results), np.array(miss_det), np.array(croped_images))
+
+	def decode_cpu_batch(self, locs, priors, variances):
+		boxes = np.concatenate((priors[:, :, :2] + locs[:, :, :2] * variances[0] * priors[:, :, 2:],
+							priors[:, :, 2:] * np.exp(locs[:, :, 2:] * variances[1])), 2)
+		boxes[:, :, :2] -= boxes[:, :, 2:] / 2
+		boxes[:, :, 2:] += boxes[:, :, :2]
+		return boxes
+
+	def decode_landm_cpu_batch(self, pre, priors, variances):
+		landms = np.concatenate((priors[:, :, :2] + pre[:, :, :2] * variances[0] * priors[:, :, 2:],
+							priors[:, :, :2] + pre[:, :, 2:4] * variances[0] * priors[:, :, 2:],
+							priors[:, :, :2] + pre[:, :, 4:6] * variances[0] * priors[:, :, 2:],
+							priors[:, :, :2] + pre[:, :, 6:8] * variances[0] * priors[:, :, 2:],
+							priors[:, :, :2] + pre[:, :, 8:10] * variances[0] * priors[:, :, 2:],
+							), axis=2)
+		return landms
 
 	def inference_batch(self, ims):
 		inputs = []
 		sizes = []
 		for i, im in enumerate(ims):
 			(h, w) = im.shape[:2]
-			img = cv2.resize(img, (640,640), interpolation=cv2.INTER_AREA)
+			img = cv2.resize(im, (640,640), interpolation=cv2.INTER_AREA)
 			inputs.append(img)
-			sizes.append([w,h])
+			sizes.append([[w,h]])
 
 		inputs = self.preProcess_batch(inputs)
 		ort_inputs = {self.sess.get_inputs()[0].name: inputs}
 		locs, confs, landms = self.sess.run(None, ort_inputs)
-		dets = self.postProcess(sizes, locs, confs, landms)
+		final_result = self.postProcess_batch(ims, sizes, locs, confs, landms)
+		return final_result
 
 	def render(self, ims):
 		im_preds = []
@@ -319,3 +388,23 @@ class RetinanetRunnable():
 			# cv2.imwrite("dfsdf.jpg", im)
 			im_preds.append(im)
 		return im_preds
+
+if __name__=="__main__":
+	CONFIG_FACEDET = {
+		"model_path": f"./weights/detectFace_model_op16.onnx",
+		"min_sizes": [[16,32], [64,128], [256,512]],
+		"steps": [8, 16, 32],
+		"variance": [0.1, 0.2],
+		"clip": False,
+		"conf_thres": 0.75,
+		"iou_thres": 0.25,
+		"image_size": [640,640],
+		"device": "cpu",
+	}
+
+	facedet = RetinanetRunnable(**CONFIG_FACEDET)
+	img = cv2.imread("test.jpg")
+	ims = [img,img,img]
+	results, miss_det, croped_images = facedet.inference_batch(ims)
+	print(results)
+	print(croped_images.shape)
