@@ -1,0 +1,50 @@
+2025-02-27 23:55:42.560 | INFO     | app2:<module>:51 - ----REDISSERVER_IP: 192.168.6.163
+2025-02-27 23:55:42.561 | INFO     | app2:<module>:52 - ----REDISSERVER_PORT: 6400
+2025-02-27 23:55:43.160 | INFO     | controllerv3:add_worker:105 - Added #1 workers on device CPU
+2025-02-27 23:55:43.161 | INFO     | controllerv3:lifespan:357 - Service started with 2 workers
+2025-02-27 23:55:43.162 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-27 23:55:44.106 | INFO     | controllerv3:searchUser:424 - Task c9e8474d-040e-4951-91d0-b018cb9df447 queued. Current queue size: 1
+2025-02-27 23:55:44.110 | INFO     | controllerv3:process_tasks:299 - ----task: c9e8474d-040e-4951-91d0-b018cb9df447
+2025-02-27 23:55:44.110 | INFO     | controllerv3:process_tasks:319 - Processing batch of 1 tasks
+2025-02-27 23:55:44.169 | INFO     | controllerv3:searchUser_batch:253 - ----task_ids: ['c9e8474d-040e-4951-91d0-b018cb9df447']
+2025-02-27 23:55:44.169 | INFO     | controllerv3:searchUser_batch:254 - ----croped_images.shape: (1, 112, 112, 3)
+2025-02-27 23:55:53.160 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:56:03.157 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:56:13.157 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:56:23.160 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:56:33.138 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:56:43.150 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:56:53.163 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:57:03.142 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:57:13.160 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:57:23.135 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:57:33.135 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:57:43.160 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:57:53.165 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:58:03.179 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:58:13.179 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:58:23.187 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:58:33.189 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:58:43.194 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:58:53.210 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:59:03.205 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:59:13.213 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:59:23.237 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:59:33.258 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:59:43.283 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-27 23:59:53.290 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:00:03.312 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:00:13.336 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:00:23.329 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:00:33.327 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:00:43.345 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:00:53.342 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:01:03.343 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:01:13.345 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:01:23.355 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:01:33.374 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:01:43.381 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:01:53.375 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:02:03.385 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.50, Queue size: 0
+2025-02-28 00:02:06.002 | INFO     | controllerv3:lifespan:362 - Shutting down service...
+2025-02-28 00:02:06.004 | INFO     | controllerv3:lifespan:370 - Service shutdown complete

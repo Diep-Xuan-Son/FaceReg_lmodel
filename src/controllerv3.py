@@ -8,6 +8,7 @@ import traceback
 from io import BytesIO
 import multiprocessing
 from string import ascii_letters, digits, punctuation
+import uuid
 
 from app2 import *
 from starlette.status import HTTP_202_ACCEPTED
@@ -29,29 +30,29 @@ LOGGER.addHandler(FILE_HANDLER)
 
 # Configuration settings
 class Config:
-    # GPU settings
-    CUDA_AVAILABLE = torch.cuda.is_available()
-    NUM_GPUS = torch.cuda.device_count() if CUDA_AVAILABLE else 0
-    
-    # Worker pool settings
-    MIN_WORKERS = 1
-    MAX_WORKERS = 5  # Maximum number of workers to scale to
-    INITIAL_WORKERS = 2
-    
-    # Auto-scaling settings
-    SCALING_THRESHOLD_HIGH = 0.8  # Scale up when queue is 80% full
-    SCALING_THRESHOLD_LOW = 0.2   # Scale down when queue is 20% full
-    SCALING_CHECK_INTERVAL = 10   # Check for scaling every 10 seconds
-    SCALE_COOLDOWN = 30
-    
-    # Performance settings
-    REQUEST_TIMEOUT = 30  # Seconds
-    QUEUE_MAX_SIZE = 5000
-    
-    # Person detection settings
-    CONFIDENCE_THRESHOLD = 0.5
+	# GPU settings
+	CUDA_AVAILABLE = torch.cuda.is_available()
+	NUM_GPUS = torch.cuda.device_count() if CUDA_AVAILABLE else 0
+	
+	# Worker pool settings
+	MIN_WORKERS = 1
+	MAX_WORKERS = 5  # Maximum number of workers to scale to
+	INITIAL_WORKERS = 2
+	
+	# Auto-scaling settings
+	SCALING_THRESHOLD_HIGH = 0.8  # Scale up when queue is 80% full
+	SCALING_THRESHOLD_LOW = 0.2   # Scale down when queue is 20% full
+	SCALING_CHECK_INTERVAL = 10   # Check for scaling every 10 seconds
+	SCALE_COOLDOWN = 30
+	
+	# Performance settings
+	REQUEST_TIMEOUT = 30  # Seconds
+	QUEUE_MAX_SIZE = 5000
+	
+	# Person detection settings
+	CONFIDENCE_THRESHOLD = 0.5
 
-    BATCH_SIZE = 8
+	BATCH_SIZE = 8
 
 
 class MultiWoker():
@@ -66,301 +67,400 @@ class MultiWoker():
 		self.current_workers = Config.MAX_WORKERS
 
 		self.worker_lock = threading.Lock()
-		self.current_worker_count = Config.INITIAL_WORKERS
+		self.current_worker_count = 0
 		self.workers = []
 
-	@classmethod
 	# Create process pool for workers
+	@staticmethod
 	def create_worker_pool(num_workers):
-	    return ThreadPoolExecutor(max_workers=num_workers)
+		return ThreadPoolExecutor(max_workers=num_workers)
 
 	def add_worker(self, new_workers, current_time):
-        with self.worker_lock:
-            if self.current_worker_count >= Config.MAX_WORKERS:
-                logger.info("Max workers reached, not adding more")
-                return False
-                
-            # Determine which GPU to use (round-robin)
-            device_id = None
-            if Config.CUDA_AVAILABLE and Config.NUM_GPUS > 0:
-                device_id = self.current_worker_count % Config.NUM_GPUS
-            
-            try:
-                # Create new models
-                facedet = RetinanetRunnable(**CONFIG_FACEDET)
-				ghostface = GhostFaceRunnable(**CONFIG_GHOSTFACE)
-				spoofingdet = FakeFace(f"{str(ROOT)}/weights/spoofing.onnx")
-                
-                # Add to worker list
-                self.workers.append([facedet, ghostface, spoofingdet])
-                self.current_worker_count += 1
+		with self.worker_lock:
+			if self.current_worker_count >= Config.MAX_WORKERS:
+				logger.info("Max workers reached, not adding more")
+				return False
+				
+			# Determine which GPU to use (round-robin)
+			device_id = None
+			if Config.CUDA_AVAILABLE and Config.NUM_GPUS > 0:
+				device_id = self.current_worker_count % Config.NUM_GPUS
+			
+			try:
+				# Create new models
+				for _ in range(new_workers):
+					facedet = RetinanetRunnable(**CONFIG_FACEDET)
+					ghostface = GhostFaceRunnable(**CONFIG_GHOSTFACE)
+					spoofingdet = FakeFace(f"{str(ROOT)}/weights/spoofing.onnx")
+					
+					# Add to worker list
+					self.workers.append([facedet, ghostface, spoofingdet])
+				self.current_worker_count += 1
 
-                # Create new worker pool
-                self.worker_pool = self.create_worker_pool(new_workers)
-                self.current_workers = new_workers
-                self.last_scale_time = current_time
-                
-                logger.info(f"Added worker #{self.current_worker_count} on device {device_id if device_id is not None else 'CPU'}")
-                return True
-            except Exception as e:
-            	tb_str = traceback.format_exc()
-                logger.error(f"Failed to add worker: {tb_str}")
-                return False
+				# Create new worker pool
+				self.worker_pool = self.create_worker_pool(new_workers)
+				self.current_workers = new_workers
+				self.last_scale_time = current_time
+				
+				logger.info(f"Added #{self.current_worker_count} workers on device {device_id if device_id is not None else 'CPU'}")
+				return True
+			except Exception as e:
+				tb_str = traceback.format_exc()
+				logger.error(f"Failed to add worker: {tb_str}")
+				return False
 
-    def remove_worker(self, new_workers, current_time):
-        with self.worker_lock:
-            if self.current_worker_count <= Config.MIN_WORKERS:
-                logger.info("Min workers reached, not removing more")
-                return False
-            
-            # Remove a worker (just decrement the count, the actual worker will be garbage collected)
-            if self.workers:
-                self.workers.pop()
-                self.current_worker_count -= 1
+	def remove_worker(self, new_workers, current_time):
+		with self.worker_lock:
+			if self.current_worker_count <= Config.MIN_WORKERS:
+				logger.info("Min workers reached, not removing more")
+				return False
+			
+			# Remove a worker (just decrement the count, the actual worker will be garbage collected)
+			for _ in range(new_workers):
+				if not self.workers:
+					return False
+					break
+				self.workers.pop()
+				self.current_worker_count -= 1
 
-                # Create new worker pool
-                self.worker_pool = self.create_worker_pool(new_workers)
-                self.current_workers = new_workers
-                self.last_scale_time = current_time
-                logger.info(f"Removed worker, now at {self.current_worker_count}")
-                return True
-            return False
+			# Create new worker pool
+			self.worker_pool = self.create_worker_pool(new_workers)
+			self.current_workers = new_workers
+			self.last_scale_time = current_time
+			logger.info(f"Removed worker, now at {self.current_worker_count}")
+			return True
 
-    def get_worker(self):
-        # Simple round-robin worker selection
-        with self.worker_lock:
-            if not self.workers:
-                return None
-            
-            # Move the first worker to the end and return it
-            worker = self.workers[0]
-            self.workers = self.workers[1:] + [worker]
-            return worker
+	def get_worker(self):
+		# Simple round-robin worker selection
+		with self.worker_lock:
+			if not self.workers:
+				return None
+			
+			# Move the first worker to the end and return it
+			worker = self.workers[0]
+			self.workers = self.workers[1:] + [worker]
+			return worker
 
 	# Worker utilization metric
 	def get_worker_utilization(self,):
-	    if self.worker_pool is None:
-	        return 0.0
-	    active_workers = len([1 for t in self.worker_pool._threads if t.is_alive()])
-	    return active_workers / self.current_workers
+		if self.worker_pool is None:
+			return 0.0
+		active_workers = len([1 for t in self.worker_pool._threads if t.is_alive()])
+		return active_workers / self.current_workers
 
 	# Auto-scaling logic
 	async def auto_scale_workers(self,):
-	    while True:
-	        try:
-	            utilization = self.get_worker_utilization()
-	            queue_size = self.request_queue.qsize()
-	            current_time = time.time()
-	            
-	            logger.info(f"Worker utilization: {utilization:.2f}, Queue size: {queue_size}")
-	            
-	            # Scale up if high utilization and not recently scaled
-	            if (utilization > Config.SCALING_THRESHOLD_HIGH or queue_size > self.current_workers * 3) and \
-	               self.current_workers < Config.MAX_WORKERS and \
-	               (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
-	                
-	                new_workers = min(self.current_workers * 2, Config.MAX_WORKERS)
-	                logger.info(f"Scaling up workers from {self.current_workers} to {new_workers}")
-	                
-	                # Replace the worker pool
-	                old_pool = self.worker_pool
-	                self.add_worker(new_workers, current_time)
-	                
-	                # Shutdown old pool gracefully
-	                if old_pool:
-	                    old_pool.shutdown(wait=False)
-	            
-	            # Scale down if low utilization and not recently scaled
-	            elif utilization < Config.SCALING_THRESHOLD_LOW and queue_size < self.current_workers and self.current_workers > Config.MAX_WORKERS and \
-	                 (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
-	                
-	                new_workers = max(self.current_workers // 2, Config.MAX_WORKERS)
-	                logger.info(f"Scaling down workers from {self.current_workers} to {new_workers}")
-	                
-	                # Replace the worker pool
-	                old_pool = self.worker_pool
-	                self.remove_worker(new_workers, current_time)
-	                
-	                # Shutdown old pool gracefully
-	                if old_pool:
-	                    old_pool.shutdown(wait=False)
-	                
-	        except Exception as e:
-	            logger.error(f"Error in auto-scaling: {str(e)}")
-	        
-	        await asyncio.sleep(Config.SCALING_CHECK_INTERVAL)  # Check every 5 seconds
+		while True:
+			try:
+				utilization = self.get_worker_utilization()
+				queue_size = self.request_queue.qsize()
+				current_time = time.time()
+				
+				logger.info(f"Worker utilization: {utilization:.2f}, Queue size: {queue_size}")
+				
+				# Scale up if high utilization and not recently scaled
+				if (utilization > Config.SCALING_THRESHOLD_HIGH and queue_size//Config.BATCH_SIZE > self.current_workers * 3) and \
+				   self.current_workers < Config.MAX_WORKERS and \
+				   (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
+					
+					new_workers = min(self.current_workers * 2, Config.MAX_WORKERS)
+					logger.info(f"Scaling up workers from {self.current_workers} to {new_workers}")
+					
+					# Replace the worker pool
+					old_pool = self.worker_pool
+					add_worker_res = self.add_worker(new_workers, current_time)
+					
+					# Shutdown old pool gracefully
+					if old_pool and add_worker_res:
+						old_pool.shutdown(wait=False)
+				
+				# Scale down if low utilization and not recently scaled
+				elif utilization < Config.SCALING_THRESHOLD_LOW and queue_size//Config.BATCH_SIZE < self.current_workers and self.current_workers > Config.MIN_WORKERS and \
+					 (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
+					
+					new_workers = max(self.current_workers // 2, Config.MIN_WORKERS)
+					logger.info(f"Scaling down workers from {self.current_workers} to {new_workers}")
+					
+					# Replace the worker pool
+					old_pool = self.worker_pool
+					rm_worker_res = self.remove_worker(new_workers, current_time)
+					
+					# Shutdown old pool gracefully
+					if old_pool and rm_worker_res:
+						old_pool.shutdown(wait=False)
+					
+			except KeyboardInterrupt:
+				logger.error("KeyboardInterrupt method")
+				self.worker_pool.shutdown(wait=True)
+				return None
+
+			except Exception as e:
+				tb_str = traceback.format_exc()
+				logger.error(f"Error in auto-scaling: {tb_str}")
+			
+			await asyncio.sleep(Config.SCALING_CHECK_INTERVAL)  # Check every 5 seconds
 
 	# Process image batch
 	def process_batch(model, image_batch, task_ids):
-	    try:
-	        # Convert image batch to tensor format expected by the model
-	        tensor_batch = [torch.from_numpy(img).permute(2, 0, 1).float().div(255.0) for img in image_batch]
-	        tensor_batch = torch.stack(tensor_batch)
-	        
-	        # Run inference
-	        with torch.no_grad():
-	            tensor_batch = tensor_batch.to(f'cuda:{Config.NUM_GPUS}' if torch.cuda.is_available() else 'cpu')
-	            predictions = model(tensor_batch)
-	        
-	        # Process results
-	        results = predictions.pandas().xyxy
-	        
-	        # Store results for each task
-	        for i, task_id in enumerate(task_ids):
-	            # Filter for person class (class 0 in COCO dataset)
-	            person_detections = results[i][results[i]['class'] == 0]
-	            person_detections = person_detections[person_detections['confidence'] >= Config.CONFIDENCE_THRESHOLD]
-	            
-	            results_store[task_id] = {
-	                'status': 'completed',
-	                'detections': person_detections[['xmin', 'ymin', 'xmax', 'ymax', 'confidence']].to_dict('records'),
-	                'person_count': len(person_detections),
-	                'completed_at': time.time()
-	            }
-	            
-	            logger.info(f"Task {task_id} completed with {len(person_detections)} person detections")
-	    
-	    except Exception as e:
-	        for task_id in task_ids:
-	            results_store[task_id] = {
-	                'status': 'error',
-	                'error': str(e),
-	                'completed_at': time.time()
-	            }
-	        tb_str = traceback.format_exc()
-	        logger.error(f"Batch processing error: {tb_str}")
+		try:
+			# Convert image batch to tensor format expected by the model
+			tensor_batch = [torch.from_numpy(img).permute(2, 0, 1).float().div(255.0) for img in image_batch]
+			tensor_batch = torch.stack(tensor_batch)
+			
+			# Run inference
+			with torch.no_grad():
+				tensor_batch = tensor_batch.to(f'cuda:{Config.NUM_GPUS}' if torch.cuda.is_available() else 'cpu')
+				predictions = model(tensor_batch)
+			
+			# Process results
+			results = predictions.pandas().xyxy
+			
+			# Store results for each task
+			for i, task_id in enumerate(task_ids):
+				# Filter for person class (class 0 in COCO dataset)
+				person_detections = results[i][results[i]['class'] == 0]
+				person_detections = person_detections[person_detections['confidence'] >= Config.CONFIDENCE_THRESHOLD]
+				
+				results_store[task_id] = {
+					'status': 'completed',
+					'detections': person_detections[['xmin', 'ymin', 'xmax', 'ymax', 'confidence']].to_dict('records'),
+					'person_count': len(person_detections),
+					'completed_at': time.time()
+				}
+				
+				logger.info(f"Task {task_id} completed with {len(person_detections)} person detections")
+		
+		except Exception as e:
+			for task_id in task_ids:
+				results_store[task_id] = {
+					'status': 'error',
+					'error': str(e),
+					'completed_at': time.time()
+				}
+			tb_str = traceback.format_exc()
+			logger.error(f"Batch processing error: {tb_str}")
 
 	# Process image batch
-	def searchUser_batch(self, models, image_batch, task_ids):
+	def searchUser_batch(self, models, image_batch, task_ids, batch_submitted_at):
+		try:
+			facedet = models[0]
+			#---------------------------face det-------------------------
+			results = facedet.inference_batch(image_batch)
+			dets, miss_dets, croped_images = results
+			if len(croped_images)==0:
+				return {"success": False, "error_code": 8001, "error": "Don't find any face"}
 
+			logger.info(f"----task_ids: {task_ids}")
+			logger.info(f"----croped_images.shape: {croped_images.shape}")
+			# box = dets[0]["loc"]
+			# # print((box[2]-box[0])*(box[3]-box[1]))
+			# area_img = img.shape[0]*img.shape[1]
+			# w_crop = (box[2]-box[0])
+			# h_crop = (box[3]-box[1])
+			for i, task_id in enumerate(task_ids):
+				self.results_store[task_id] = {
+					'status': 'completed',
+					'results': croped_images.shape,
+					'submitted_at': batch_submitted_at[i],
+					'completed_at': time.time()
+				}
+			return
+		except Exception as e:
+			for task_id in task_ids:
+				self.results_store[task_id] = {
+					'status': 'error',
+					'error': str(e),
+					'submitted_at': batch_submitted_at[i],
+					'completed_at': time.time()
+				}
+			tb_str = traceback.format_exc()
+			logger.error(f"Batch processing error: {tb_str}")
 
 	# Task processor
-	async def process_tasks():
-	    # Load model
-	    # model = load_model()
-	    # logger.info(f"Model loaded on {'GPU' if torch.cuda.is_available() else 'CPU'}")
-	    # facedet = RetinanetRunnable(**CONFIG_FACEDET)
+	async def process_tasks(self, ):
+		# Load model
+		# model = load_model()
+		# logger.info(f"Model loaded on {'GPU' if torch.cuda.is_available() else 'CPU'}")
+		# facedet = RetinanetRunnable(**CONFIG_FACEDET)
 		# ghostface = GhostFaceRunnable(**CONFIG_GHOSTFACE)
 		# spoofingdet = FakeFace(f"{str(ROOT)}/weights/spoofing.onnx")
+		
+		loop = asyncio.get_event_loop()
+		# Process batches from the queue
+		while True:
+			try:
+				batch_tasks = []
+				batch_images = []
+				batch_task_ids = []
+				batch_submitted_at = []
+				
+				# Get the first task
+				task = await self.request_queue.get()
+				logger.info(f"----task: {task['task_id']}")
+				batch_tasks.append(task)
+				batch_images.append(task['image'])
+				batch_task_ids.append(task['task_id'])
+				batch_submitted_at.append(task['submitted_at'])
+				
+				# Try to get more tasks to fill the batch
+				try:
+					for _ in range(Config.BATCH_SIZE - 1):
+						if self.request_queue.qsize() > 0:
+							task = self.request_queue.get_nowait()
+							batch_tasks.append(task)
+							batch_images.append(task['image'])
+							batch_task_ids.append(task['task_id'])
+							batch_submitted_at.append(task['submitted_at'])
+						else:
+							break
+				except asyncio.QueueEmpty:
+					pass
+				
+				logger.info(f"Processing batch of {len(batch_tasks)} tasks")
+				
+				# Process batch in thread pool
+				if self.worker_pool is not None:
+					# Get a worker
+					worker = self.get_worker()
+					if not worker:
+						raise Exception("No workers available")
+					self.worker_pool.submit(self.searchUser_batch, worker, batch_images, batch_task_ids, batch_submitted_at)
+					# await loop.run_in_executor(self.worker_pool, self.searchUser_batch, worker, batch_images, batch_task_ids)
+				
+				# Mark tasks as done in the queue
+				for _ in batch_tasks:
+					self.request_queue.task_done()
+					
+			except KeyboardInterrupt:
+				logger.error("KeyboardInterrupt method")
+				self.worker_pool.shutdown(wait=True)
+				return None
 
-		# Get a worker
-        worker = self.get_worker()
-        if not worker:
-            raise Exception("No workers available")
-	    
-	    # Process batches from the queue
-	    while True:
-	        try:
-	            batch_tasks = []
-	            batch_images = []
-	            batch_task_ids = []
-	            
-	            # Get the first task
-	            task = await self.request_queue.get()
-	            batch_tasks.append(task)
-	            batch_images.append(task['image'])
-	            batch_task_ids.append(task['task_id'])
-	            
-	            # Try to get more tasks to fill the batch
-	            try:
-	                for _ in range(Config.BATCH_SIZE - 1):
-	                    if self.request_queue.qsize() > 0:
-	                        task = self.request_queue.get_nowait()
-	                        batch_tasks.append(task)
-	                        batch_images.append(task['image'])
-	                        batch_task_ids.append(task['task_id'])
-	                    else:
-	                        break
-	            except asyncio.QueueEmpty:
-	                pass
-	            
-	            logger.info(f"Processing batch of {len(batch_tasks)} tasks")
-	            
-	            # Process batch in thread pool
-	            if self.worker_pool is not None:
-	                self.worker_pool.submit(search_user_batch, worker, batch_images, batch_task_ids)
-	            
-	            # Mark tasks as done in the queue
-	            for _ in batch_tasks:
-	                self.request_queue.task_done()
-	                
-	        except Exception as e:
-	        	tb_str = traceback.format_exc()
-	            logger.error(f"Error in task processor: {tb_str}")
-	            await asyncio.sleep(1)  # Prevent tight loop in case of errors
+			except Exception as e:
+				tb_str = traceback.format_exc()
+				logger.error(f"Error in task processor: {tb_str}")
+				await asyncio.sleep(1)  # Prevent tight loop in case of errors
 
 MULTIW = MultiWoker()
 
-# Response models
-class SearchUserResponse(BaseModel):
-    task_id: str
-    status: str
-    message: str
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    # MULTIW.worker_pool = ThreadPoolExecutor(max_workers=Config.INITIAL_WORKERS)
+    MULTIW.add_worker(Config.INITIAL_WORKERS, time.time())
+    MULTIW.current_workers = Config.INITIAL_WORKERS
+    
+    # Start background tasks
+    task_processor = asyncio.create_task(MULTIW.process_tasks())
+    auto_scaler = asyncio.create_task(MULTIW.auto_scale_workers())
+    
+    logger.info(f"Service started with {Config.INITIAL_WORKERS} workers")
+    
+    yield
+    
+    # Shutdown
+    logger.info("Shutting down service...")
+    task_processor.cancel()
+    auto_scaler.cancel()
+    
+    # Clean up the worker pool
+    if MULTIW.worker_pool:
+        MULTIW.worker_pool.shutdown(wait=True)
+    
+    logger.info("Service shutdown complete")
 
-class SearchUserResult(BaseModel):
-    status: str
-    detections: Optional[List[DetectionResult]] = None
-    person_count: Optional[int] = None
-    error: Optional[str] = None
-    completed_at: float
+# Create FastAPI application
+app = FastAPI(
+    title="Face Recognition API",
+    description="High-concurrency API for face recognition in images",
+    version="1.0.0",
+    lifespan=lifespan
+)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
+# # Response models
+# class SearchUserResponse(BaseModel):
+# 	task_id: str
+# 	status: str
+# 	message: str
 
+# class SearchUserResult(BaseModel):
+# 	status: str = None
+# 	results: object = None
+# 	error: Union[str] = None
+# 	submitted_at: float = 0.0
+# 	completed_at: float = 0.0
 
-@app.post("/api/searchUser", status_code=HTTP_202_ACCEPTED, response_model=SearchUserResponse)
+# # Start the background worker
+# @app.on_event("startup")
+# async def startup_event():
+# 	asyncio.create_task(MULTIW.process_tasks())
+# 	asyncio.create_task(MULTIW.auto_scale_workers())
+
+@app.post("/api/searchUser")
 async def searchUser(image: UploadFile = File(...)):
 	try:
 		# Generate task ID
-        task_id = str(uuid.uuid4())
+		task_id = str(uuid.uuid4())
 
-        # Read and preprocess image
-        image_data = await file.read()
-        nparr = np.frombuffer(image_data, np.uint8)
-    	img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-    	
-        # Create task and add to queue
-        MULTIW.results_store[task_id] = {'status': 'pending'}
-        await MULTIW.request_queue.put({'task_id': task_id, 'image': img, 'submitted_at': time.time()})
+		# Read and preprocess image
+		image_data = await image.read()
+		nparr = np.frombuffer(image_data, np.uint8)
+		img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+		
+		# Create task and add to queue
+		MULTIW.results_store[task_id] = {'status': 'pending'}
+		await MULTIW.request_queue.put({'task_id': task_id, 'image': img, 'submitted_at': time.time()})
 
-        queue_size = MULTIW.request_queue.qsize()
-        logger.info(f"Task {task_id} queued. Current queue size: {queue_size}")
+		queue_size = MULTIW.request_queue.qsize()
+		logger.info(f"Task {task_id} queued. Current queue size: {queue_size}")
 
-        return SearchUserResponse(
-            task_id=task_id,
-            status="pending",
-            message=f"Task submitted and queued. Current queue size: {queue_size}"
-        )
+		return JSONResponse(status_code=204, content={
+			"task_id":task_id,
+			"status":"pending",
+			"message":f"Task submitted and queued. Current queue size: {queue_size}"
+		})
 
 	except Exception as e:
 		tb_str = traceback.format_exc()
-        logger.error(f"Error submitting task: {tb_str}")
-        raise HTTPException(status_code=500, detail=f"Error processing request: {str(e)}")
+		logger.error(f"Error submitting task: {tb_str}")
+		return JSONResponse(status_code=500, content=f"Error processing request: {str(e)}")
 
-@app.get("/api/getSearchUserResult", response_model=SearchUserResult)
+@app.get("/api/getSearchUserResult")
 async def getSearchUserResult(task_id: str):
-    """
-    Retrieve the results of a detection task by task ID.
-    """
-    if task_id not in MULTIW.results_store:
-        raise HTTPException(status_code=404, detail="Task not found")
-    
-    return MULTIW.results_store[task_id]
+	"""
+	Retrieve the results of a detection task by task ID.
+	"""
+	if task_id not in MULTIW.results_store:
+		return JSONResponse(status_code=404, content="Task not found")
+	result = MULTIW.results_store[task_id]
+	MULTIW.results_store.pop(task_id)
+	return JSONResponse(status_code=204, content=result)
 
 @app.get("/health")
 async def get_health_status():
-    """
-    Get service health status and metrics.
-    """
-    return {
-        "status": "healthy",
-        "worker_count": MULTIW.current_workers,
-        "worker_utilization": self.get_worker_utilization(),
-        "queue_size": MULTIW.request_queue.qsize(),
-        "active_tasks": len(MULTIW.results_store),
-        "gpu_available": torch.cuda.is_available(),
-    }
+	"""
+	Get service health status and metrics.
+	"""
+	return {
+		"status": "healthy",
+		"worker_count": MULTIW.current_workers,
+		"worker_utilization": self.get_worker_utilization(),
+		"queue_size": MULTIW.request_queue.qsize(),
+		"active_tasks": len(MULTIW.results_store),
+		"gpu_available": torch.cuda.is_available(),
+	}
 
 #---------------------old-----------------------------
-heart_beat_thread = threading.Thread(target=delete_file_cronj, args=(PATH_IMG_FAIL, 25200), daemon=True)https://github.com/Diep-Xuan-Son/FaceReg_lmodel
+heart_beat_thread = threading.Thread(target=delete_file_cronj, args=(PATH_IMG_FAIL, 25200), daemon=True)
 heart_beat_thread.start()
 
 @app.post('/healthcheck')
@@ -718,7 +818,7 @@ if __name__=="__main__":
 	host = "0.0.0.0"
 	port = 8423
 
-	uvicorn.run("controller:app", host=host, port=port, log_level="info", reload=True)
+	uvicorn.run("controllerv3:app", host=host, port=port, log_level="info", reload=True)
 
 
 """
