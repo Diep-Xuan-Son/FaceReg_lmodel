@@ -1,8 +1,9 @@
 import redis
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi import FastAPI, Request, Depends, Body, HTTPException
+from fastapi import FastAPI, Request, Depends, Body, HTTPException, status
 from fastapi.responses import StreamingResponse, JSONResponse
+from fastapi.encoders import jsonable_encoder
 from contextlib import asynccontextmanager
 
 from schemes import *

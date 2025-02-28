@@ -35,9 +35,9 @@ class Config:
 	NUM_GPUS = torch.cuda.device_count() if CUDA_AVAILABLE else 0
 	
 	# Worker pool settings
-	MIN_WORKERS = 1
+	MIN_WORKERS = 2
 	MAX_WORKERS = 5  # Maximum number of workers to scale to
-	INITIAL_WORKERS = 2
+	INITIAL_WORKERS = 3
 	
 	# Auto-scaling settings
 	SCALING_THRESHOLD_HIGH = 0.8  # Scale up when queue is 80% full
@@ -78,7 +78,7 @@ class MultiWoker():
 	def add_worker(self, new_workers, current_time):
 		with self.worker_lock:
 			if self.current_worker_count >= Config.MAX_WORKERS:
-				logger.info("Max workers reached, not adding more")
+				LOGGER_APP.info("Max workers reached, not adding more")
 				return False
 				
 			# Determine which GPU to use (round-robin)
@@ -102,17 +102,17 @@ class MultiWoker():
 				self.current_workers = new_workers
 				self.last_scale_time = current_time
 				
-				logger.info(f"Added #{self.current_worker_count} workers on device {device_id if device_id is not None else 'CPU'}")
+				LOGGER_APP.info(f"Added #{self.current_worker_count} workers on device {device_id if device_id is not None else 'CPU'}")
 				return True
 			except Exception as e:
 				tb_str = traceback.format_exc()
-				logger.error(f"Failed to add worker: {tb_str}")
+				LOGGER_APP.error(f"Failed to add worker: {tb_str}")
 				return False
 
 	def remove_worker(self, new_workers, current_time):
 		with self.worker_lock:
 			if self.current_worker_count <= Config.MIN_WORKERS:
-				logger.info("Min workers reached, not removing more")
+				LOGGER_APP.info("Min workers reached, not removing more")
 				return False
 			
 			# Remove a worker (just decrement the count, the actual worker will be garbage collected)
@@ -127,7 +127,7 @@ class MultiWoker():
 			self.worker_pool = self.create_worker_pool(new_workers)
 			self.current_workers = new_workers
 			self.last_scale_time = current_time
-			logger.info(f"Removed worker, now at {self.current_worker_count}")
+			LOGGER_APP.info(f"Removed worker, now at {self.current_worker_count}")
 			return True
 
 	def get_worker(self):
@@ -156,15 +156,16 @@ class MultiWoker():
 				queue_size = self.request_queue.qsize()
 				current_time = time.time()
 				
-				logger.info(f"Worker utilization: {utilization:.2f}, Queue size: {queue_size}")
+				LOGGER_APP.info(f"Worker utilization: {utilization:.2f}, Queue size: {queue_size}")
 				
 				# Scale up if high utilization and not recently scaled
-				if (utilization > Config.SCALING_THRESHOLD_HIGH and queue_size//Config.BATCH_SIZE > self.current_workers * 3) and \
-				   self.current_workers < Config.MAX_WORKERS and \
-				   (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
+				# if (utilization > Config.SCALING_THRESHOLD_HIGH and queue_size//Config.BATCH_SIZE > self.current_workers * 3) and \
+				#    self.current_workers < Config.MAX_WORKERS and (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
+				if queue_size//Config.BATCH_SIZE > self.current_workers * 2 and \
+				   self.current_workers < Config.MAX_WORKERS and (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
 					
-					new_workers = min(self.current_workers * 2, Config.MAX_WORKERS)
-					logger.info(f"Scaling up workers from {self.current_workers} to {new_workers}")
+					new_workers = min(self.current_workers + 1, Config.MAX_WORKERS)
+					LOGGER_APP.info(f"Scaling up workers from {self.current_workers} to {new_workers}")
 					
 					# Replace the worker pool
 					old_pool = self.worker_pool
@@ -175,11 +176,11 @@ class MultiWoker():
 						old_pool.shutdown(wait=False)
 				
 				# Scale down if low utilization and not recently scaled
-				elif utilization < Config.SCALING_THRESHOLD_LOW and queue_size//Config.BATCH_SIZE < self.current_workers and self.current_workers > Config.MIN_WORKERS and \
-					 (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
+				elif queue_size//Config.BATCH_SIZE < self.current_workers and \
+					self.current_workers > Config.MIN_WORKERS and (current_time - self.last_scale_time) > Config.SCALE_COOLDOWN:
 					
-					new_workers = max(self.current_workers // 2, Config.MIN_WORKERS)
-					logger.info(f"Scaling down workers from {self.current_workers} to {new_workers}")
+					new_workers = max(self.current_workers - 1, Config.MIN_WORKERS)
+					LOGGER_APP.info(f"Scaling down workers from {self.current_workers} to {new_workers}")
 					
 					# Replace the worker pool
 					old_pool = self.worker_pool
@@ -190,13 +191,13 @@ class MultiWoker():
 						old_pool.shutdown(wait=False)
 					
 			except KeyboardInterrupt:
-				logger.error("KeyboardInterrupt method")
+				LOGGER_APP.error("KeyboardInterrupt method")
 				self.worker_pool.shutdown(wait=True)
 				return None
 
 			except Exception as e:
 				tb_str = traceback.format_exc()
-				logger.error(f"Error in auto-scaling: {tb_str}")
+				LOGGER_APP.error(f"Error in auto-scaling: {tb_str}")
 			
 			await asyncio.sleep(Config.SCALING_CHECK_INTERVAL)  # Check every 5 seconds
 
@@ -228,7 +229,7 @@ class MultiWoker():
 					'completed_at': time.time()
 				}
 				
-				logger.info(f"Task {task_id} completed with {len(person_detections)} person detections")
+				LOGGER_APP.info(f"Task {task_id} completed with {len(person_detections)} person detections")
 		
 		except Exception as e:
 			for task_id in task_ids:
@@ -238,7 +239,7 @@ class MultiWoker():
 					'completed_at': time.time()
 				}
 			tb_str = traceback.format_exc()
-			logger.error(f"Batch processing error: {tb_str}")
+			LOGGER_APP.error(f"Batch processing error: {tb_str}")
 
 	# Process image batch
 	def searchUser_batch(self, models, image_batch, task_ids, batch_submitted_at):
@@ -250,8 +251,8 @@ class MultiWoker():
 			if len(croped_images)==0:
 				return {"success": False, "error_code": 8001, "error": "Don't find any face"}
 
-			logger.info(f"----task_ids: {task_ids}")
-			logger.info(f"----croped_images.shape: {croped_images.shape}")
+			LOGGER_APP.info(f"----task_ids: {task_ids}")
+			LOGGER_APP.info(f"----croped_images.shape: {croped_images.shape}")
 			# box = dets[0]["loc"]
 			# # print((box[2]-box[0])*(box[3]-box[1]))
 			# area_img = img.shape[0]*img.shape[1]
@@ -274,13 +275,13 @@ class MultiWoker():
 					'completed_at': time.time()
 				}
 			tb_str = traceback.format_exc()
-			logger.error(f"Batch processing error: {tb_str}")
+			LOGGER_APP.error(f"Batch processing error: {tb_str}")
 
 	# Task processor
 	async def process_tasks(self, ):
 		# Load model
 		# model = load_model()
-		# logger.info(f"Model loaded on {'GPU' if torch.cuda.is_available() else 'CPU'}")
+		# LOGGER_APP.info(f"Model loaded on {'GPU' if torch.cuda.is_available() else 'CPU'}")
 		# facedet = RetinanetRunnable(**CONFIG_FACEDET)
 		# ghostface = GhostFaceRunnable(**CONFIG_GHOSTFACE)
 		# spoofingdet = FakeFace(f"{str(ROOT)}/weights/spoofing.onnx")
@@ -296,7 +297,7 @@ class MultiWoker():
 				
 				# Get the first task
 				task = await self.request_queue.get()
-				logger.info(f"----task: {task['task_id']}")
+				LOGGER_APP.info(f"----task: {task['task_id']}")
 				batch_tasks.append(task)
 				batch_images.append(task['image'])
 				batch_task_ids.append(task['task_id'])
@@ -316,7 +317,7 @@ class MultiWoker():
 				except asyncio.QueueEmpty:
 					pass
 				
-				logger.info(f"Processing batch of {len(batch_tasks)} tasks")
+				LOGGER_APP.info(f"Processing batch of {len(batch_tasks)} tasks")
 				
 				# Process batch in thread pool
 				if self.worker_pool is not None:
@@ -332,13 +333,13 @@ class MultiWoker():
 					self.request_queue.task_done()
 					
 			except KeyboardInterrupt:
-				logger.error("KeyboardInterrupt method")
+				LOGGER_APP.error("KeyboardInterrupt method")
 				self.worker_pool.shutdown(wait=True)
 				return None
 
 			except Exception as e:
 				tb_str = traceback.format_exc()
-				logger.error(f"Error in task processor: {tb_str}")
+				LOGGER_APP.error(f"Error in task processor: {tb_str}")
 				await asyncio.sleep(1)  # Prevent tight loop in case of errors
 
 MULTIW = MultiWoker()
@@ -354,12 +355,12 @@ async def lifespan(app: FastAPI):
     task_processor = asyncio.create_task(MULTIW.process_tasks())
     auto_scaler = asyncio.create_task(MULTIW.auto_scale_workers())
     
-    logger.info(f"Service started with {Config.INITIAL_WORKERS} workers")
+    LOGGER_APP.info(f"Service started with {Config.INITIAL_WORKERS} workers")
     
     yield
     
     # Shutdown
-    logger.info("Shutting down service...")
+    LOGGER_APP.info("Shutting down service...")
     task_processor.cancel()
     auto_scaler.cancel()
     
@@ -367,7 +368,7 @@ async def lifespan(app: FastAPI):
     if MULTIW.worker_pool:
         MULTIW.worker_pool.shutdown(wait=True)
     
-    logger.info("Service shutdown complete")
+    LOGGER_APP.info("Service shutdown complete")
 
 # Create FastAPI application
 app = FastAPI(
@@ -421,9 +422,9 @@ async def searchUser(image: UploadFile = File(...)):
 		await MULTIW.request_queue.put({'task_id': task_id, 'image': img, 'submitted_at': time.time()})
 
 		queue_size = MULTIW.request_queue.qsize()
-		logger.info(f"Task {task_id} queued. Current queue size: {queue_size}")
+		LOGGER_APP.info(f"Task {task_id} queued. Current queue size: {queue_size}")
 
-		return JSONResponse(status_code=204, content={
+		return JSONResponse(status_code=status.HTTP_201_CREATED, content={
 			"task_id":task_id,
 			"status":"pending",
 			"message":f"Task submitted and queued. Current queue size: {queue_size}"
@@ -431,7 +432,7 @@ async def searchUser(image: UploadFile = File(...)):
 
 	except Exception as e:
 		tb_str = traceback.format_exc()
-		logger.error(f"Error submitting task: {tb_str}")
+		LOGGER_APP.error(f"Error submitting task: {tb_str}")
 		return JSONResponse(status_code=500, content=f"Error processing request: {str(e)}")
 
 @app.get("/api/getSearchUserResult")
@@ -440,10 +441,10 @@ async def getSearchUserResult(task_id: str):
 	Retrieve the results of a detection task by task ID.
 	"""
 	if task_id not in MULTIW.results_store:
-		return JSONResponse(status_code=404, content="Task not found")
+		return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content="Task not found")
 	result = MULTIW.results_store[task_id]
 	MULTIW.results_store.pop(task_id)
-	return JSONResponse(status_code=204, content=result)
+	return JSONResponse(status_code=200, content=result)
 
 @app.get("/health")
 async def get_health_status():

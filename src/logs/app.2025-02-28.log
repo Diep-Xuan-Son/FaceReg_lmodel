@@ -1,0 +1,1107 @@
+2025-02-28 13:42:35.491 | INFO     | app2:<module>:52 - ----REDISSERVER_IP: 192.168.6.163
+2025-02-28 13:42:35.491 | INFO     | app2:<module>:53 - ----REDISSERVER_PORT: 6400
+2025-02-28 13:42:36.140 | INFO     | controllerv3:add_worker:105 - Added #1 workers on device CPU
+2025-02-28 13:42:36.141 | INFO     | controllerv3:lifespan:358 - Service started with 3 workers
+2025-02-28 13:42:36.141 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:42:46.142 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:42:56.144 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:43:06.147 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:43:06.148 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:43:06.148 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:43:16.150 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:43:16.151 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:43:16.152 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:43:26.153 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:43:26.154 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:43:26.155 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:43:36.157 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:43:36.158 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:43:36.159 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:43:46.161 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:43:46.163 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:43:46.163 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:43:56.166 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:43:56.167 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:43:56.168 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:44:06.170 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:44:06.170 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:44:06.171 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:44:16.173 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:44:16.174 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:44:16.175 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:44:26.177 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:44:26.178 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:44:26.178 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:44:36.179 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:44:36.180 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:44:36.181 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:44:46.183 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:44:46.184 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:44:46.185 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:44:56.187 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:44:56.188 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:44:56.188 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:45:06.189 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:45:06.190 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:45:06.190 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:45:16.191 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:45:16.192 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:45:16.194 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:45:26.196 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:45:26.197 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:45:26.199 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:45:36.200 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:45:36.201 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:45:36.201 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:45:46.203 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:45:46.204 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:45:46.205 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:45:56.207 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:45:56.207 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:45:56.208 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:46:06.209 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:46:06.210 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:46:06.211 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:46:16.213 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:46:16.214 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:46:16.215 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:46:26.218 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:46:26.219 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:46:26.220 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:46:36.222 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:46:36.222 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:46:36.223 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:46:46.224 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:46:46.225 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:46:46.226 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:46:56.228 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:46:56.229 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:46:56.230 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:47:06.232 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:47:06.232 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:47:06.233 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:47:16.234 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:47:16.236 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:47:16.236 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:47:26.238 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:47:26.239 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:47:26.240 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:47:36.241 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:47:36.242 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:47:36.243 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:47:46.244 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:47:46.245 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:47:46.246 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:47:56.247 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:47:56.249 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:47:56.249 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:48:06.251 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:48:06.252 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:48:06.253 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:48:16.255 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:48:16.256 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:48:16.257 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:48:26.259 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:48:26.260 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:48:26.261 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:48:36.263 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:48:36.264 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:48:36.264 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:48:46.266 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:48:46.267 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:48:46.268 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:48:56.269 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:48:56.270 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:48:56.271 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:49:06.273 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:49:06.274 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:49:06.275 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:49:16.277 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:49:16.277 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:49:16.278 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:49:26.279 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:49:26.279 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:49:26.280 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:49:36.281 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:49:36.282 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:49:36.283 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:49:46.285 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:49:46.286 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:49:46.287 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:49:56.289 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:49:56.290 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:49:56.291 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:50:06.292 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:50:06.292 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:50:06.293 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:50:16.294 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:50:16.295 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:50:16.296 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:50:26.298 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:50:26.299 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:50:26.300 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:50:36.303 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:50:36.304 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:50:36.304 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:50:46.306 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:50:46.307 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:50:46.308 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:50:56.310 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:50:56.310 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:50:56.311 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:51:06.313 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:51:06.314 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:51:06.314 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:51:16.315 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:51:16.316 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:51:16.316 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:51:26.317 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:51:26.318 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:51:26.319 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:51:36.320 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:51:36.321 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:51:36.321 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:51:46.322 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:51:46.323 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:51:46.324 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:51:56.325 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:51:56.326 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:51:56.328 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:52:06.329 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:52:06.331 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:52:06.331 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:52:16.333 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:52:16.334 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:52:16.334 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:52:26.335 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:52:26.336 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:52:26.338 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:52:36.340 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:52:36.340 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:52:36.341 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:52:46.342 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:52:46.343 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:52:46.344 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:52:56.346 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:52:56.347 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:52:56.348 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:53:06.350 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:53:06.352 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:53:06.353 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:53:16.355 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:53:16.356 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:53:16.357 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:53:26.359 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:53:26.360 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:53:26.361 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:53:36.363 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:53:36.364 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:53:36.365 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:53:46.367 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:53:46.368 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:53:46.369 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:53:56.370 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:53:56.371 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:53:56.372 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:54:06.374 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:54:06.375 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:54:06.376 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:54:16.377 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:54:16.378 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:54:16.378 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:54:26.380 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:54:26.381 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:54:26.381 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:54:36.383 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:54:36.384 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:54:36.384 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:54:46.386 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:54:46.387 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:54:46.388 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:54:56.389 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:54:56.390 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:54:56.391 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:55:06.392 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:55:06.393 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:55:06.393 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:55:16.394 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:55:16.395 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:55:16.396 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:55:26.398 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:55:26.399 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:55:26.400 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:55:36.402 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:55:36.402 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:55:36.403 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:55:46.404 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:55:46.405 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:55:46.406 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:55:56.409 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:55:56.410 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:55:56.411 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:56:06.413 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:56:06.414 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:56:06.415 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:56:16.417 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:56:16.418 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:56:16.419 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:56:26.420 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:56:26.421 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:56:26.422 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:56:36.424 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:56:36.426 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:56:36.427 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:56:46.428 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:56:46.430 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:56:46.431 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:56:56.432 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:56:56.433 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:56:56.434 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:57:06.436 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:57:06.437 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:57:06.437 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:57:16.439 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:57:16.440 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:57:16.441 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:57:26.442 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:57:26.443 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:57:26.444 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:57:36.446 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:57:36.447 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:57:36.448 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:57:46.451 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:57:46.451 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:57:46.452 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:57:56.453 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:57:56.454 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:57:56.455 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:58:06.457 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:58:06.457 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:58:06.458 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:58:16.459 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:58:16.460 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:58:16.461 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:58:26.462 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:58:26.463 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:58:26.464 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:58:36.466 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:58:36.467 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:58:36.468 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:58:46.470 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:58:46.471 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:58:46.472 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:58:56.473 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:58:56.475 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:58:56.476 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:59:06.478 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:59:06.479 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:59:06.480 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:59:16.481 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:59:16.482 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:59:16.483 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:59:26.485 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:59:26.486 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:59:26.487 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:59:36.489 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:59:36.490 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:59:36.491 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:59:46.494 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:59:46.495 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:59:46.496 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 13:59:56.498 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 13:59:56.499 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 13:59:56.500 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:00:06.502 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:00:06.503 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:00:06.504 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:00:16.506 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:00:16.507 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:00:16.508 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:00:26.510 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:00:26.511 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:00:26.512 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:00:36.514 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:00:36.515 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:00:36.516 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:00:46.517 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:00:46.519 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:00:46.520 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:00:56.521 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:00:56.523 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:00:56.524 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:01:06.526 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:01:06.527 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:01:06.528 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:01:16.529 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:01:16.530 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:01:16.530 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:01:26.531 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:01:26.533 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:01:26.534 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:01:36.535 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:01:36.536 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:01:36.536 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:01:46.537 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:01:46.538 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:01:46.539 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:01:56.540 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:01:56.541 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:01:56.542 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:02:06.544 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:02:06.544 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:02:06.545 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:02:16.545 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:02:16.546 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:02:16.547 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:02:26.549 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:02:26.550 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:02:26.551 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:02:36.552 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:02:36.553 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:02:36.553 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:02:46.555 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:02:46.556 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:02:46.557 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:02:56.559 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:02:56.560 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:02:56.561 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:03:06.562 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:03:06.564 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:03:06.565 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:03:16.567 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:03:16.569 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:03:16.570 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:03:26.572 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:03:26.574 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:03:26.574 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:03:36.576 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:03:36.576 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:03:36.577 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:03:46.578 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:03:46.580 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:03:46.581 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:03:56.583 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:03:56.584 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:03:56.585 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:04:06.586 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:04:06.587 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:04:06.589 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:04:16.591 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:04:16.593 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:04:16.594 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:04:26.596 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:04:26.597 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:04:26.597 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:04:36.598 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:04:36.599 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:04:36.600 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:04:46.601 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:04:46.602 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:04:46.602 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:04:56.604 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:04:56.605 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:04:56.605 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:05:06.606 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:05:06.607 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:05:06.607 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:05:16.608 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:05:16.608 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:05:16.609 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:05:26.610 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:05:26.611 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:05:26.611 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:05:36.612 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:05:36.613 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:05:36.614 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:05:46.616 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:05:46.617 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:05:46.617 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:05:56.619 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:05:56.619 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:05:56.619 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:06:06.620 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:06:06.622 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:06:06.623 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:06:16.624 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:06:16.625 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:06:16.626 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:06:26.628 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:06:26.629 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:06:26.630 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:06:36.632 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:06:36.633 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:06:36.634 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:06:46.636 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:06:46.637 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:06:46.638 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:06:56.640 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:06:56.642 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:06:56.643 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:07:06.644 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:07:06.645 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:07:06.645 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:07:16.646 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:07:16.647 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:07:16.648 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:07:26.650 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:07:26.650 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:07:26.651 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:07:36.652 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:07:36.654 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:07:36.655 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:07:46.657 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:07:46.658 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:07:46.659 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:07:56.662 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:07:56.663 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:07:56.664 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:08:06.666 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:08:06.667 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:08:06.668 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:08:16.670 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:08:16.671 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:08:16.672 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:08:26.674 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:08:26.674 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:08:26.674 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:08:36.676 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:08:36.677 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:08:36.678 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:08:46.680 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:08:46.681 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:08:46.682 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:08:56.685 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:08:56.686 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:08:56.687 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:09:06.689 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:09:06.690 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:09:06.690 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:09:16.692 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:09:16.693 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:09:16.694 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:09:26.695 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:09:26.697 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:09:26.698 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:09:36.699 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:09:36.700 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:09:36.701 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:09:46.702 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:09:46.703 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:09:46.704 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:09:56.706 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:09:56.707 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:09:56.708 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:10:06.709 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:10:06.710 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:10:06.711 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:10:16.713 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:10:16.714 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:10:16.715 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:10:26.718 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:10:26.719 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:10:26.720 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:10:36.722 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:10:36.723 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:10:36.724 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:10:46.726 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:10:46.727 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:10:46.728 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:10:56.729 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:10:56.729 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:10:56.730 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:11:06.731 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:11:06.732 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:11:06.733 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:11:16.735 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:11:16.736 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:11:16.737 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:11:26.740 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:11:26.741 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:11:26.741 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:11:36.742 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:11:36.743 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:11:36.744 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:11:46.745 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:11:46.745 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:11:46.746 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:11:56.747 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:11:56.748 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:11:56.749 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:12:06.750 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:12:06.751 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:12:06.752 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:12:16.754 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:12:16.755 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:12:16.756 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:12:26.758 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:12:26.759 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:12:26.760 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:12:36.763 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:12:36.764 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:12:36.765 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:12:46.767 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:12:46.768 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:12:46.769 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:12:56.771 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:12:56.772 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:12:56.772 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:13:06.774 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:13:06.775 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:13:06.776 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:13:16.779 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:13:16.781 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:13:16.782 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:13:26.784 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:13:26.786 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:13:26.786 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:13:36.788 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:13:36.790 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:13:36.790 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:13:46.792 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:13:46.793 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:13:46.794 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:13:56.795 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:13:56.796 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:13:56.796 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:14:06.798 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:14:06.799 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:14:06.800 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:14:16.802 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:14:16.803 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:14:16.804 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:14:26.806 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:14:26.807 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:14:26.808 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:14:36.810 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:14:36.811 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:14:36.812 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:14:46.813 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:14:46.814 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:14:46.815 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:14:56.816 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:14:56.817 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:14:56.818 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:15:06.821 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:15:06.822 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:15:06.822 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:15:16.824 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:15:16.824 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:15:16.825 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:15:26.826 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:15:26.827 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:15:26.828 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:15:36.830 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:15:36.831 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:15:36.832 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:15:46.834 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:15:46.836 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:15:46.836 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:15:56.838 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:15:56.839 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:15:56.840 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:16:06.842 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:16:06.843 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:16:06.844 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:16:16.846 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:16:16.847 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:16:16.849 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:16:26.851 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:16:26.852 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:16:26.853 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:16:36.855 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:16:36.857 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:16:36.858 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:16:46.859 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:16:46.860 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:16:46.860 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:16:56.863 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:16:56.864 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:16:56.864 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:17:06.866 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:17:06.867 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:17:06.868 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:17:16.869 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:17:16.870 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:17:16.871 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:17:26.872 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:17:26.873 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:17:26.873 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:17:36.876 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:17:36.877 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:17:36.878 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:17:46.880 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:17:46.881 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:17:46.882 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:17:56.884 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:17:56.885 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:17:56.885 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:18:06.886 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:18:06.886 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:18:06.886 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:18:16.887 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:18:16.888 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:18:16.888 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:18:26.890 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:18:26.890 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:18:26.891 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:18:36.893 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:18:36.894 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:18:36.895 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:18:46.897 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:18:46.898 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:18:46.899 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:18:56.901 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:18:56.901 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:18:56.901 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:19:06.903 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:19:06.904 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:19:06.905 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:19:16.907 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:19:16.909 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:19:16.910 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:19:26.912 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:19:26.913 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:19:26.914 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:19:36.915 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:19:36.916 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:19:36.917 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:19:46.920 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:19:46.921 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:19:46.921 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:19:56.923 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:19:56.923 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:19:56.924 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:20:06.925 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:20:06.926 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:20:06.927 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:20:16.929 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:20:16.930 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:20:16.931 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:20:26.933 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:20:26.934 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:20:26.934 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:20:36.936 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:20:36.937 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:20:36.937 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:20:46.940 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:20:46.941 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:20:46.941 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:20:56.943 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:20:56.944 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:20:56.945 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:21:06.947 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:21:06.948 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:21:06.949 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:21:16.951 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:21:16.952 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:21:16.953 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:21:26.955 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:21:26.957 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:21:26.958 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:21:36.960 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:21:36.960 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:21:36.961 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:21:46.963 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:21:46.964 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:21:46.965 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:21:56.968 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:21:56.968 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:21:56.970 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:22:06.971 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:22:06.972 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:22:06.973 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:22:16.975 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:22:16.976 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:22:16.977 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:22:26.978 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:22:26.979 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:22:26.980 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:22:36.981 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:22:36.982 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:22:36.982 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:22:46.983 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:22:46.984 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:22:46.985 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:22:56.986 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:22:56.987 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:22:56.988 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:23:06.992 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:23:06.993 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:23:06.994 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:23:16.996 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:23:16.998 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:23:16.999 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:23:27.001 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:23:27.002 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:23:27.003 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:23:37.004 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:23:37.005 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:23:37.006 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:23:47.008 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:23:47.009 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:23:47.010 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:23:57.012 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:23:57.013 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:23:57.014 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:24:07.016 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:24:07.017 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:24:07.018 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:24:17.020 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:24:17.021 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:24:17.023 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:24:27.024 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:24:27.025 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:24:27.026 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:24:37.027 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:24:37.028 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:24:37.028 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:24:47.030 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:24:47.031 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:24:47.032 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:24:57.034 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:24:57.034 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:24:57.035 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:25:07.037 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:25:07.038 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:25:07.038 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:25:17.040 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:25:17.041 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:25:17.042 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:25:27.044 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:25:27.045 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:25:27.046 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:25:37.047 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:25:37.049 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:25:37.050 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:25:47.051 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:25:47.052 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:25:47.052 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:25:57.053 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:25:57.054 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:25:57.055 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:26:07.056 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:26:07.057 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:26:07.058 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:26:17.060 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:26:17.061 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:26:17.062 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:26:27.064 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:26:27.065 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:26:27.066 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:26:37.067 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:26:37.068 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:26:37.069 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:26:47.072 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:26:47.073 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:26:47.074 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:26:57.077 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:26:57.078 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:26:57.079 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:27:07.080 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:27:07.082 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:27:07.082 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:27:17.084 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:27:17.085 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:27:17.085 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:27:27.086 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:27:27.087 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:27:27.088 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:27:37.089 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:27:37.090 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:27:37.091 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:27:47.093 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:27:47.094 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:27:47.095 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:27:57.097 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:27:57.098 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:27:57.099 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:28:07.101 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:28:07.102 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:28:07.103 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:28:17.104 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:28:17.105 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:28:17.105 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:28:27.107 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:28:27.108 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:28:27.108 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:28:37.111 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:28:37.112 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:28:37.113 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:28:47.115 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:28:47.116 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:28:47.117 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:28:57.118 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:28:57.120 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:28:57.121 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:29:07.124 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:29:07.125 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:29:07.126 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:29:17.129 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:29:17.130 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:29:17.131 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:29:27.133 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:29:27.135 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:29:27.136 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:29:37.138 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:29:37.138 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:29:37.139 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:29:47.141 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:29:47.142 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:29:47.142 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:29:57.145 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:29:57.146 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:29:57.146 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:30:07.147 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:30:07.148 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:30:07.149 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:30:17.152 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:30:17.153 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:30:17.154 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:30:27.155 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:30:27.156 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:30:27.157 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:30:37.159 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:30:37.160 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:30:37.161 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:30:47.163 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:30:47.163 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:30:47.164 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:30:57.166 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:30:57.168 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:30:57.169 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:31:07.171 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:31:07.172 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:31:07.173 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:31:17.175 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:31:17.175 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:31:17.176 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:31:27.178 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:31:27.179 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:31:27.180 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:31:37.182 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:31:37.184 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:31:37.185 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:31:47.188 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:31:47.189 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:31:47.190 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:31:57.191 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:31:57.192 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:31:57.193 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:32:07.195 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:32:07.196 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:32:07.197 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:32:17.199 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:32:17.200 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:32:17.201 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:32:27.202 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:32:27.203 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:32:27.203 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:32:37.204 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:32:37.205 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:32:37.206 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:32:47.207 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:32:47.208 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:32:47.209 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:32:57.211 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:32:57.212 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:32:57.213 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:33:07.215 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:33:07.216 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:33:07.216 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:33:17.217 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:33:17.218 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:33:17.218 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:33:27.220 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:33:27.221 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:33:27.222 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:33:37.223 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:33:37.225 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:33:37.226 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:33:47.228 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:33:47.228 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:33:47.228 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:33:57.229 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:33:57.230 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:33:57.232 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:34:07.234 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:34:07.234 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:34:07.235 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:34:17.236 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:34:17.237 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:34:17.237 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:34:27.238 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:34:27.239 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:34:27.239 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:34:37.240 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:34:37.241 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:34:37.242 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:34:47.245 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:34:47.246 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:34:47.246 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:34:57.247 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:34:57.248 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:34:57.249 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:35:07.251 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:35:07.252 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:35:07.253 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:35:17.255 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:35:17.256 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:35:17.256 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:35:27.258 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:35:27.259 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:35:27.259 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:35:37.261 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:35:37.262 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:35:37.263 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:35:47.265 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:35:47.266 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:35:47.267 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:35:57.268 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:35:57.270 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:35:57.271 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:36:07.274 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:36:07.275 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:36:07.276 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:36:17.278 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:36:17.279 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:36:17.280 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:36:27.282 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:36:27.283 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:36:27.284 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:36:37.286 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:36:37.287 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:36:37.288 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:36:47.289 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:36:47.290 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:36:47.290 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:36:57.291 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:36:57.292 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:36:57.293 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:37:07.295 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:37:07.296 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:37:07.296 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:37:17.298 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:37:17.298 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:37:17.299 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:37:27.302 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:37:27.303 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:37:27.304 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:37:37.306 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:37:37.307 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:37:37.307 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:37:47.309 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:37:47.310 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:37:47.311 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:37:57.313 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:37:57.314 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:37:57.315 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:38:07.317 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:38:07.318 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:38:07.319 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:38:17.321 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:38:17.322 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:38:17.323 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:38:27.325 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:38:27.326 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:38:27.327 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:38:37.329 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:38:37.330 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:38:37.331 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:38:47.332 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:38:47.333 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:38:47.334 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:38:57.336 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:38:57.337 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:38:57.338 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:39:07.340 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:39:07.341 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:39:07.342 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:39:17.344 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:39:17.344 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:39:17.345 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:39:27.346 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:39:27.346 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:39:27.347 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:39:37.348 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:39:37.348 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:39:37.348 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:39:47.349 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:39:47.351 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:39:47.351 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:39:57.353 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:39:57.354 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:39:57.355 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:40:07.356 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:40:07.356 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:40:07.357 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:40:17.359 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:40:17.360 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:40:17.361 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:40:27.363 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:40:27.364 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:40:27.364 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:40:37.366 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:40:37.367 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:40:37.368 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:40:47.369 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:40:47.370 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:40:47.370 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:40:57.370 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:40:57.372 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:40:57.372 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:41:07.375 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:41:07.376 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:41:07.377 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:41:17.378 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:41:17.379 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:41:17.380 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:41:27.382 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:41:27.382 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:41:27.383 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:41:37.384 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:41:37.386 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:41:37.387 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:41:47.389 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:41:47.389 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:41:47.389 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:41:57.391 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:41:57.391 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:41:57.392 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:42:07.393 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:42:07.394 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:42:07.394 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:42:17.396 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:42:17.397 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:42:17.397 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:42:27.398 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:42:27.399 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:42:27.401 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:42:37.404 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:42:37.405 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:42:37.407 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:42:47.409 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:42:47.410 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:42:47.411 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:42:57.413 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:42:57.414 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:42:57.415 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:43:07.416 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:43:07.417 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:43:07.418 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:43:17.420 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:43:17.421 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:43:17.422 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:43:27.424 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:43:27.425 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:43:27.426 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:43:37.427 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:43:37.429 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:43:37.430 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:43:47.431 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:43:47.432 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:43:47.432 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:43:57.434 | INFO     | controllerv3:auto_scale_workers:159 - Worker utilization: 0.00, Queue size: 0
+2025-02-28 14:43:57.435 | INFO     | controllerv3:auto_scale_workers:183 - Scaling down workers from 3 to 2
+2025-02-28 14:43:57.437 | INFO     | controllerv3:remove_worker:115 - Min workers reached, not removing more
+2025-02-28 14:44:02.944 | INFO     | controllerv3:lifespan:363 - Shutting down service...
+2025-02-28 14:44:02.945 | INFO     | controllerv3:lifespan:371 - Service shutdown complete

@@ -1,0 +1,10 @@
+2025-02-28 13:42:35.555 - AICLOUD: stderr - ERROR - [32mINFO[0m:     Started server process [[36m19520[0m]
+2025-02-28 13:42:35.556 - AICLOUD: stderr - ERROR - [32mINFO[0m:     Waiting for application startup.
+2025-02-28 13:42:35.556 - AICLOUD: stdout - INFO - ['AzureExecutionProvider', 'CPUExecutionProvider']
+2025-02-28 13:42:35.757 - AICLOUD: stdout - INFO - ['AzureExecutionProvider', 'CPUExecutionProvider']
+2025-02-28 13:42:35.957 - AICLOUD: stdout - INFO - ['AzureExecutionProvider', 'CPUExecutionProvider']
+2025-02-28 13:42:36.141 - AICLOUD: stderr - ERROR - [32mINFO[0m:     Application startup complete.
+2025-02-28 14:44:02.843 - AICLOUD: stderr - ERROR - [32mINFO[0m:     Shutting down
+2025-02-28 14:44:02.944 - AICLOUD: stderr - ERROR - [32mINFO[0m:     Waiting for application shutdown.
+2025-02-28 14:44:02.946 - AICLOUD: stderr - ERROR - [32mINFO[0m:     Application shutdown complete.
+2025-02-28 14:44:02.946 - AICLOUD: stderr - ERROR - [32mINFO[0m:     Finished server process [[36m19520[0m]
